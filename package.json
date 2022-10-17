@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "watch": "npx tailwindcss -i styles/styles.css -o static/styles/styles.css --watch",
+    "dev": "concurrently \"npm run watch\" \"zola serve\""
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.7",
+    "concurrently": "^7.4.0",
+    "daisyui": "^2.31.0",
+    "tailwindcss": "^3.1.8"
+  }
+}
