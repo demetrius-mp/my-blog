@@ -19,10 +19,10 @@
     "rootDir": "./",
     "baseUrl": "./",
     "typeRoots": [
-      "./scripts/global.d.ts"
+      "js/global.d.ts"
     ],
   },
   "include": [
-    "scripts/**/*.ts",
+    "js/**/*.ts",
   ],
 }
