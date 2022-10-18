@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content  %}
-<div class="flex flex-col md:flex-row gap-4 md:gap-12 items-center justify-center">
+<div class="flex flex-col md:flex-row gap-4 md:gap-12 justify-center">
   <div class="flex flex-col items-center gap-3">
     <div class="avatar">
       <div class="w-48 rounded-full">
@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="self-center">
     <h1 class="font-bold font-sans break-normal text-3xl sm:text-5xl pb-4">
       Biography
     </h1>
@@ -39,4 +39,58 @@
     </article>
   </div>
 </div>
+
+<div class="flex flex-col md:flex-row gap-6 justify-evenly mt-8">
+  <div>
+    <h3 class="font-bold text-2xl mb-2">
+      Interests
+    </h3>
+    <ul class="list-disc pl-4 flex flex-col gap-3">
+      <li>
+        Natural Language Processing
+      </li>
+      <li>
+        Data Science
+      </li>
+      <li>
+        Sharing Knowledge
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h3 class="font-bold text-2xl mb-2">
+      Education
+    </h3>
+    <ul class="flex flex-col gap-2">
+      <li>
+        <div class="flex flex-col">
+          <div class="flex gap-2">
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3M18.82 9L12 12.72L5.18 9L12 5.28L18.82 9M17 16L12 18.72L7 16V12.27L12 15L17 12.27V16Z" />
+            </svg>
+            Bachelor in Software Engineering, 2019-2022
+          </div>
+          <div class="opacity-50">
+            FACOM - UFMS
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="flex flex-col">
+          <div class="flex gap-2">
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3M18.82 9L12 12.72L5.18 9L12 5.28L18.82 9M17 16L12 18.72L7 16V12.27L12 15L17 12.27V16Z" />
+            </svg>
+            Msc. in Computer Science, 2022-today
+          </div>
+          <div class="opacity-50">
+            FACOM - UFMS
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
 {% endblock content  %}

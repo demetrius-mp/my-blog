@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "watch": "npx tailwindcss -i styles/styles.css -o static/styles/styles.css --watch",
-    "dev": "concurrently \"npm run watch\" \"zola serve\""
+    "watch:css": "npx tailwindcss -i styles/styles.css -o static/styles/styles.css --watch",
+    "watch:zola": "zola serve",
+    "dev": "concurrently \"npm run watch:css\" \"npm run watch:zola\""
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.7",
