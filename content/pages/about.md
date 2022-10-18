@@ -2,6 +2,7 @@
 title= "About me"
 template = "about.html"
 date = 2022-10-17
+path = "/about"
 +++
 
 # Hello! Welcome to my blog

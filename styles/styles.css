@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.zola-anchor {
+  @apply pr-2 opacity-60 no-underline text-2xl;
+}
+
+.zola-anchor:hover {
+  @apply opacity-100;
+}

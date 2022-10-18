@@ -1,7 +1,42 @@
 {% extends "base.html" %}
 
 {% block content  %}
-<h1 class="text-2xl">
-  Título
-</h1>
+<div class="flex flex-col md:flex-row gap-4 md:gap-12 items-center justify-center">
+  <div class="flex flex-col items-center gap-3">
+    <div class="avatar">
+      <div class="w-48 rounded-full">
+        <img src="{{ get_url(path='images/avatar.jpeg') | safe }}" />
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <h3 class="text-3xl font-bold">
+        Demetrius P.
+      </h3>
+      <span class="opacity-50">Moved by curiosity.</span>
+    </div>
+  </div>
+
+  <div>
+    <h1 class="font-bold font-sans break-normal text-3xl sm:text-5xl pb-4">
+      Biography
+    </h1>
+
+    <article class="prose">
+      <p>
+        Welcome to my blog! My name is Demetrius, I'm from Corumbá - MS, Brazil.
+      </p>
+      <p>
+        This blog is built using 
+        <a href="https://www.getzola.org/">Zola</a> 
+        as the Static Site Engine, and 
+        <a href="https://tailwindcss.com/">TailwindCSS</a> with 
+        <a href="https://daisyui.com/">DaisyUI</a> for styling.
+      </p>
+      <p>
+        My links are available on the footer of this page! There, you can find my email, LinkedIn, GitHub, and more.
+      </p>
+    </article>
+  </div>
+</div>
 {% endblock content  %}
