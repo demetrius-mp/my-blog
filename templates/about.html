@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% import "macros/social_links.html" as social_links %}
 
 {% block content %}
 <a class="text-4xl font-bold leading-7">
@@ -22,5 +21,4 @@
   {{ page.content | safe }}
 </article>
 
-{{ social_links::social_links(social_config=config.extra.social) }}
 {% endblock content %}
