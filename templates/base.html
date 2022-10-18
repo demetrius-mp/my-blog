@@ -23,34 +23,6 @@
   {{ components::footer(config=config.extra.social) }}
 </body>
 
-<script>
-  const colorTheme = {
-    get() {
-      const colorTheme = localStorage.getItem('colorTheme') || 'light';
-  
-      return colorTheme;
-    },
-    set(theme) {
-      localStorage.setItem('colorTheme', theme);
-    },
-    toggle() {
-      const currentTheme = this.get();
-      const toggledTheme = currentTheme === 'light' ? 'dark' : 'light';
-  
-      document.documentElement.setAttribute('data-theme', toggledTheme);
-      this.set(toggledTheme);
-    },
-    init() {
-      const colorTheme = this.get();
-      document.documentElement.setAttribute('data-theme', colorTheme);
-    }
-  }
-
-  colorTheme.init();
-
-  document.getElementById('themeSwitcher').addEventListener('click', () => {
-    colorTheme.toggle();
-  })
-</script>
+<script src="{{ get_url(path='scripts/index.js') }}"></script>
 
 </html>

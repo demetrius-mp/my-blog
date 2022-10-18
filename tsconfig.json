@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "ES7",
+      "DOM"
+    ],
+    "outDir": "static",
+    "target": "es6",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "strict": true,
+    "sourceMap": true,
+    "importsNotUsedAsValues": "error",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "./",
+    "baseUrl": "./",
+    "typeRoots": [
+      "./scripts/global.d.ts"
+    ],
+  },
+  "include": [
+    "scripts/**/*.ts",
+  ],
+}
