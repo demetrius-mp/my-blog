@@ -1,6 +1,14 @@
 # The URL the site will be built for
 base_url = "https://me.dpanovitch.dev"
 
+title = "Demetrius's Blog"
+
+description = "My personal blog and portfolio. Built using Zola."
+
+default_language = "en"
+
+output_dir = "public"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
 
@@ -15,6 +23,9 @@ highlight_code = true
 [extra]
 # Put all your custom variables here
 author_name = "Demetrius Panovitch"
+keywords = "Portfolio, Blog, Developer"
+seo = true
+banner = "images/avatar.jpeg"
 
 [extra.social]
 feed = true
