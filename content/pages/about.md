@@ -5,11 +5,7 @@ date = 2022-10-17
 path = "/about"
 +++
 
-# Hello! Welcome to my blog
-
-# Hello! Welcome to my blog1
-
-# Hello! Welcome to my blog2
+Still working on this page!
 
 <!-- # Hello! Welcome to my blog
 
