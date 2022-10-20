@@ -1,5 +1,4 @@
 {% import "macros/components.html" as components %}
-{% import "macros/head.html" as head %}
 
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
@@ -11,7 +10,6 @@
   {% set favicon = resize_image(path='static/images/avatar.jpeg', format="png", width=32, height=32) %}
   <link rel="shortcut icon" href="{{ favicon.url }}" type="image/png">
   <link rel="icon" href="{{ favicon.url }}" type="image/png">
-  {{ head::seo(config=config, title=config.title) }}
   <meta name="base" content="{{ config.base_url | safe }}" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="mobile-web-app-capable" content="yes" />
