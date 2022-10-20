@@ -88,3 +88,53 @@
   </div>
 </footer>
 {% endmacro footer %}
+
+{% macro seo() %}
+
+<!-- site indexing seo metatags -->
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+<!-- content related seo metatags -->
+{% if page and page.title %}
+  {% set title = config.title ~ ' | ' ~ page.title %}
+{% else %}
+  {% set title = config.title %}
+{% endif %}
+
+{% if page and page.extra and page.extra.keywords %}
+  {% set keywords = page.extra.keywords ~ ', ' ~ config.extra.keywords %}
+{% else %}
+  {% set keywords = config.extra.keywords %}
+{% endif %}
+
+{% if page and page.description %}
+  {% set description = page.description %}
+{% else %}
+  {% set description = config.description %}
+{% endif %}
+
+<title>{{ title }}</title>
+<meta name="author" content="{{ config.extra.author_name }}" />
+<meta name="title" content="{{ title }}">
+<meta name="description" content="{{ description }}">
+<meta name="copyright" content="{{ config.title }}" />
+<meta name="keywords" content="{{ keywords }}" />
+
+<!-- other seo metatags -->
+<link rel="canonical" href="{{ current_url | safe }}" />
+
+<!-- open graph / facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ current_url | safe }}" />
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+
+<!-- twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ current_url | safe }}" />
+<meta property="twitter:title" content="{{ title }}">
+<meta property="twitter:description" content="{{ description }}">
+
+{% endmacro seo %}

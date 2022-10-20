@@ -23,7 +23,7 @@ highlight_code = true
 [extra]
 # Put all your custom variables here
 author_name = "Demetrius Panovitch"
-keywords = "Portfolio, Blog, Developer"
+keywords = "Portfolio, Blog, Computer Science"
 seo = true
 banner = "images/avatar.jpeg"
 

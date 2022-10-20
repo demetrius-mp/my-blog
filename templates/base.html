@@ -4,13 +4,15 @@
 <html lang="en" data-theme="dark">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ get_url(path='css/styles.css') | safe }}" />
-  {% set favicon = resize_image(path='static/images/avatar.jpeg', format="png", width=32, height=32) %}
-  <link rel="shortcut icon" href="{{ favicon.url }}" type="image/png">
-  <link rel="icon" href="{{ favicon.url }}" type="image/png">
-  <title>Demetrius's Blog</title>
+  {% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ get_url(path='css/styles.css') | safe }}" />
+    {% set favicon = resize_image(path='static/images/avatar.jpeg', format="png", width=32, height=32) %}
+    <link rel="shortcut icon" href="{{ favicon.url }}" type="image/png">
+    <link rel="icon" href="{{ favicon.url }}" type="image/png">
+    <title>Demetrius's Blog</title>
+  {% endblock head %}
 </head>
 
 <body class="min-h-screen flex flex-col">

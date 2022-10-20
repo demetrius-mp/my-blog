@@ -1,7 +1,11 @@
 +++
 title = "About me"
 template = "about-me.html"
+description = "Information on my education, interests, professional experiences, languages, and technologies."
 path = "/about-me"
+
+[extra]
+keywords = "About me, Information"
 +++
 
 ## My professional experiences
