@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "watch:css": "npx tailwindcss -i css/styles.css -o static/css/styles.css --watch",
-    "watch:zola": "zola serve",
-    "watch:ts": "tsc --watch",
-    "dev": "concurrently \"npm run watch:css\" \"npm run watch:ts\" \"npm run watch:zola\"",
+    "dev:css": "npx tailwindcss -i css/styles.css -o static/css/styles.css --watch",
+    "dev:zola": "zola serve",
+    "dev:ts": "tsc --watch",
+    "dev": "concurrently \"npm run dev:css\" \"npm run dev:ts\" \"npm run dev:zola\"",
     "build:css": "NODE_ENV=production npx postcss css/styles.css -o static/css/styles.css",
     "prebuild:ts": "tsc --build",
     "build:ts": "npx uglifyjs static/js/index.js -o static/js/index.min.js",
