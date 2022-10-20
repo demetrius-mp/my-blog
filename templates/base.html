@@ -10,20 +10,13 @@
   {% set favicon = resize_image(path='static/images/avatar.jpeg', format="png", width=32, height=32) %}
   <link rel="shortcut icon" href="{{ favicon.url }}" type="image/png">
   <link rel="icon" href="{{ favicon.url }}" type="image/png">
-  <meta name="base" content="{{ config.base_url | safe }}" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <title>Demetrius's Blog</title>
 </head>
 
 <body class="min-h-screen flex flex-col">
   {{ components::navbar(config=config) }}
-  
-  <div class="container mx-auto my-5 px-4 sm:px-6 lg:px-8">
-    {% block content %} {% endblock %}
-  </div>
+
+  {% block content %} {% endblock %}
 
   {{ components::footer(config=config.extra.social) }}
 </body>

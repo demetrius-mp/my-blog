@@ -13,3 +13,7 @@
 article.prose > h1,h2,h3,h4,h5,h6 {
   @apply flex items-center;
 }
+
+#about-me-markdown-content.prose {
+  @apply max-w-full;
+}
