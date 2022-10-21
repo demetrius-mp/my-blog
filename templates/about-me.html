@@ -1,9 +1,5 @@
 {% extends "base.html" %}
 
-{% block head %}
-{{ super() }}
-{% endblock head %}
-
 {% block content %}
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 my-8">
   <div class="mx-auto max-w-3xl">
@@ -11,14 +7,14 @@
       <div class="flex flex-col items-center gap-3">
         <div class="avatar">
           <div class="w-48 rounded-full">
-            <img src="{{ get_url(path='images/avatar.jpeg') | safe }}" />
+            <img alt="A picture of me, showing only from the neck up. I'm wearing a white shirt, and the background is a bluish sky." src="{{ get_url(path='images/avatar.jpeg') | safe }}" />
           </div>
         </div>
 
         <div class="flex flex-col items-center">
-          <h3 class="text-3xl font-bold">
+          <h1 class="text-3xl font-bold">
             Demetrius P.
-          </h3>
+          </h1>
           <span class="opacity-50">Moved by curiosity.</span>
         </div>
       </div>
@@ -34,10 +30,10 @@
           </p>
           <p>
             This blog is built using 
-            <a href="https://www.getzola.org/">Zola</a> 
+            <a href="https://www.getzola.org/" target="_blank">Zola</a> 
             as the Static Site Engine, and 
-            <a href="https://tailwindcss.com/">TailwindCSS</a> with 
-            <a href="https://daisyui.com/">DaisyUI</a> for styling.
+            <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a> with 
+            <a href="https://daisyui.com/" target="_blank">DaisyUI</a> for styling.
           </p>
           <p>
             My links are available on the footer of this page! There, you can find my email, LinkedIn, GitHub, and more.
