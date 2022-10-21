@@ -6,7 +6,7 @@
     "dev": "concurrently \"npm run dev:css\" \"npm run dev:ts\" \"npm run dev:zola\"",
     "build:css": "NODE_ENV=production npx postcss css/styles.css -o static/css/styles.css",
     "prebuild:ts": "tsc --build",
-    "build:ts": "npx uglifyjs static/js/index.js -o static/js/index.min.js",
+    "build:ts": "npx uglifyjs static/js/index.min.js -o static/js/index.min.js",
     "build:zola": "zola build",
     "build": "npm run build:css && npm run build:ts && npm run build:zola"
   },

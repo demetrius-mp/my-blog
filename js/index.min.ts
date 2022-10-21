@@ -35,4 +35,12 @@ const colorTheme = {
   },
 }
 
+function enableJsRequiredSections() {
+  Array.from(document.getElementsByClassName('requires-js')).forEach((el) => {
+    el.classList.remove('requires-js')
+  })
+}
+
+enableJsRequiredSections()
+
 colorTheme.init();

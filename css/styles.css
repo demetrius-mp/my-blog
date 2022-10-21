@@ -17,3 +17,7 @@ article.prose > h1,h2,h3,h4,h5,h6 {
 #about-me-markdown-content.prose {
   @apply max-w-full;
 }
+
+.requires-js {
+  @apply hidden;
+}
