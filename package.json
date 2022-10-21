@@ -1,13 +1,15 @@
 {
   "scripts": {
-    "dev:css": "npx tailwindcss -i css/styles.css -o static/css/styles.css --watch",
+    "dev:css": "tailwindcss -i css/styles.css -o static/css/styles.css --watch",
     "dev:zola": "zola serve",
     "dev:ts": "tsc --watch",
     "dev": "concurrently \"npm run dev:css\" \"npm run dev:ts\" \"npm run dev:zola\"",
-    "build:css": "NODE_ENV=production npx postcss css/styles.css -o static/css/styles.css",
+    "build:css": "NODE_ENV=production postcss css/styles.css -o static/css/styles.css",
     "prebuild:ts": "tsc --build",
-    "build:ts": "npx uglifyjs static/js/index.min.js -o static/js/index.min.js",
+    "build:ts": "terser static/js/index.min.js -o static/js/index.min.js",
+    "minify:html": "html-minifier-terser --collapse-whitespace --remove-comments --file-ext html --input-dir public --output-dir public",
     "build:zola": "zola build",
+    "postbuild:zola": "npm run minify:html",
     "build": "npm run build:css && npm run build:ts && npm run build:zola"
   },
   "dependencies": {
@@ -16,9 +18,11 @@
     "concurrently": "^7.4.0",
     "cssnano": "^5.1.13",
     "daisyui": "^2.31.0",
+    "html-minifier-terser": "^7.0.0",
     "postcss": "^8.4.18",
     "postcss-cli": "^10.0.0",
     "tailwindcss": "^3.1.8",
+    "terser": "^5.15.1",
     "typescript": "^4.8.4",
     "uglify-js": "^3.17.3"
   }
