@@ -1,0 +1,32 @@
+{
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "package.json": "package-lock.json, tsconfig.json, postcss.config.*, tailwind.config.*, netlify.toml, .gitignore, .markdownlint.json",
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.markdownlint": true
+  },
+  "eslint.options": {
+    "extensions": [
+      ".md",
+      ".ts",
+    ]
+  },
+  "eslint.validate": [
+    "markdown",
+    "typescript",
+  ],
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+}

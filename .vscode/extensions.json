@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "DavidAnson.vscode-markdownlint",
+    "wholroyd.jinja",
+    "bungcip.better-toml",
+    "formulahendry.auto-rename-tag",
+    "meganrogge.template-string-converter",
+    "PKief.material-icon-theme",
+  ]
+}
