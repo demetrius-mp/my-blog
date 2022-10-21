@@ -92,7 +92,12 @@
 {% macro seo() %}
 
 <!-- site indexing seo metatags -->
+{% if not current_url %}
+<meta name="robots" content="noindex, follow" />
+{% else %}
 <meta name="robots" content="index, follow" />
+{% endif %}
+
 <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
@@ -123,6 +128,7 @@
 <meta name="keywords" content="{{ keywords }}" />
 
 <!-- other seo metatags -->
+{% if current_url %}
 <link rel="canonical" href="{{ current_url | safe }}" />
 
 <!-- open graph / facebook -->
@@ -136,5 +142,6 @@
 <meta name="twitter:url" content="{{ current_url | safe }}" />
 <meta property="twitter:title" content="{{ title }}">
 <meta property="twitter:description" content="{{ description }}">
+{% endif %}
 
 {% endmacro seo %}

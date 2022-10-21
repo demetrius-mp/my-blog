@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero mt-auto">
+  <div class="hero-content text-center">
+    <div class="max-w-md">
+      <h1 class="text-5xl font-bold">Page not found :(</h1>
+      <p class="py-6">
+        The page you are looking for doesn't exist or has been moved.
+      </p>
+      <a href="{{ get_url(path='/') }}" class="btn btn-primary">Go home</a>
+    </div>
+  </div>
+</div>
+{% endblock content %}
