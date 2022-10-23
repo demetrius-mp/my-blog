@@ -7,11 +7,7 @@
 }
 
 .zola-anchor:hover {
-  @apply opacity-100;
-}
-
-article.prose > h1,h2,h3,h4,h5,h6 {
-  @apply flex items-center;
+  @apply opacity-50;
 }
 
 #about-me-markdown-content.prose {
