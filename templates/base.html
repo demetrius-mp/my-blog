@@ -25,6 +25,8 @@
   {{ components::footer(config=config.extra.social) }}
 </body>
 
+{% block script %}
 <script src="{{ get_url(path='js/index.min.js') }}"></script>
+{% endblock script %}
 
 </html>

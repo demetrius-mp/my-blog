@@ -2,16 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .markdown {
+    @apply prose lg:prose-lg lg:max-w-4xl prose-pre:text-[1em] lg:prose-pre:text-[1em] min-w-0;
+  }
+}
+
 .zola-anchor {
-  @apply pr-2 opacity-60 no-underline text-2xl;
+  @apply pr-2 opacity-60 no-underline;
 }
 
 .zola-anchor:hover {
   @apply opacity-50;
-}
-
-#about-me-markdown-content.prose {
-  @apply max-w-full;
 }
 
 .requires-js {
