@@ -1,13 +1,8 @@
-const theme = require('tailwindcss/defaultTheme')
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./templates/**/*.html"],
-  theme: {
-    fontFamily: {
-      'mono': ['Roboto Mono', ...theme.fontFamily.mono]
-    }
-  },
+  darkMode: ['class', '[data-theme="dark"]'],
+  theme: {},
   variants: {},
   plugins: [
     require('@tailwindcss/typography'),
