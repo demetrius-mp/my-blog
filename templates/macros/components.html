@@ -145,3 +145,24 @@
 {% endif %}
 
 {% endmacro seo %}
+
+{% macro post_summary(page) %}
+<div>
+  <p class="text-sm">
+    <time datetime="2020-03-16">
+      {{ page.date | date(format="%B %d, %Y") }}
+    </time>
+  </p>
+  <a href="#" class="mt-2 block">
+    <p class="text-xl font-semibold">
+      {{ page.title }}
+    </p>
+    <p class="mt-3 text-base">
+      {{ page.description }}
+    </p>
+  </a>
+  <div class="mt-3">
+    <a href="#" class="text-base font-semibold link">Read full story</a>
+  </div>
+</div>
+{% endmacro post_summary %}

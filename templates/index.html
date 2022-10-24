@@ -1,5 +1,14 @@
+{% import "macros/components.html" as components %}
+
 {% extends "container.html" %}
 
 {% block contained %}
-<a href="{{ get_url(path='/about-me') }}" class="link">About me!</a>
+{% for ssection in section.subsections -%}
+  {% set ssection = get_section(path=ssection) -%}
+  <div class="mt-6 grid gap-16 pt-10 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
+    {% for page in ssection.pages %}
+      {{ components::post_summary(page=page) }}
+    {% endfor %}
+  </div>
+{% endfor %}
 {% endblock contained %}

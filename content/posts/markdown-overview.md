@@ -3,7 +3,6 @@ title = "Markdown showcase"
 description = "Showcasing how the markdown content is rendered"
 date = 2022-10-23
 updated = 2022-10-23
-draft = false
 slug = "markdown-showcase"
 
 [taxonomies]

@@ -1,0 +1,9 @@
+{% extends "container.html" %}
+
+{% block contained %}
+{% for page in section.pages %}
+  <li class="pb-3">
+    {{page.title}}
+  </li>
+{% endfor %}
+{% endblock contained %}
