@@ -2,4 +2,5 @@
 
 ## To Do
 
-Add content title to page title, and content description to meta tag.
+- List posts.
+- Put post date and tags in separate lines.
