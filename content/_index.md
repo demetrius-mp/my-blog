@@ -1,4 +1,4 @@
 +++
 date = 2020-07-09
-page_template = "posts.html"
+page_template = "posts/index.html"
 +++

@@ -1,6 +1,6 @@
 +++
 title = "About me"
-template = "about-me.html"
+template = "about-me/index.html"
 description = "Information on my education, interests, professional experiences, languages, and technologies."
 path = "/about-me"
 
