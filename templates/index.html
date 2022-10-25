@@ -3,19 +3,36 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 {% set posts_subsection = section.subsections | first %}
 {% set subsection = get_section(path=posts_subsection) %}
+
+<div class="breadcrumbs mb-4">
+  <ul>
+    <li>
+      <a href="{{ get_url(path='/') }}">
+        <svg class="w-4 h-4 mr-2 stroke-current" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 5.69L17 10.19V18H15V12H9V18H7V10.19L12 5.69M12 3L2 12H5V20H11V14H13V20H19V12H22" />
+        </svg>
+        Home
+      </a>
+    </li>
+  </ul>
+</div>
+
 <div class="mb-8">
-  <h1 class="text-5xl font-extrabold">Recent posts</h1>
+  <h1 class="lg:text-5xl text-4xl font-extrabold">Recent posts</h1>
   <a class="link" href="{{ get_url(path='posts', trailing_slash=false) }}">
     See all posts
   </a>
 </div>
+
 <ul class="grid grid-cols-1 gap-6">
-  {% for page in subsection.pages %}
+  {% for page in subsection.pages | slice(end=3) %}
     <li>
       {{ components::post_summary(page=page) }}
     </li>
   {% endfor %}
 </ul>
+
 {% endblock content %}

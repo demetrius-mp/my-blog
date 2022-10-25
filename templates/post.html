@@ -1,6 +1,36 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<div class="breadcrumbs mb-4">
+  <ul>
+    <li>
+      <a href="{{ get_url(path='/') }}">
+        <svg class="w-4 h-4 mr-2 stroke-current" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 5.69L17 10.19V18H15V12H9V18H7V10.19L12 5.69M12 3L2 12H5V20H11V14H13V20H19V12H22" />
+        </svg>
+        Home
+      </a>
+    </li> 
+    <li>
+      <a href="{{ get_url(path='/posts', trailing_slash=false) }}">
+        <svg class="w-4 h-4 mr-2 stroke-current" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M20,18H4V8H20M20,6H12L10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6Z" />
+        </svg>
+        Posts
+      </a>
+    </li>
+    <li>
+      <a class="pointer-events-none" href="{{ page.permalink | safe }}">
+        <svg class="w-4 h-4 mr-2 stroke-current" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M5,3C3.89,3 3,3.89 3,5V19C3,20.11 3.89,21 5,21H19C20.11,21 21,20.11 21,19V5C21,3.89 20.11,3 19,3H5M5,5H19V19H5V5M7,7V9H17V7H7M7,11V13H17V11H7M7,15V17H14V15H7Z" />
+        </svg>
+        {{ page.title }}
+      </a>
+    </li>
+  </ul>
+</div>
+
 <h1 class="text-5xl font-extrabold mb-8">
   {{ page.title }}
 </h1>
@@ -10,19 +40,23 @@
   </svg>
   Posted on {{ page.date | date(format="%B %d, %Y") }}
 </div>
-{% for tag in page.taxonomies.tags %}
-  <span>
-    #<a class="link link-primary dark:link-accent" href="{{ get_url(path='404', trailing_slash=false) }}">{{ tag }}</a>
-  </span>
-{% endfor %}
-<div class="flex justify-center">
-  <article class="markdown">
-    {% if page.extra.show_description %}
-      <div class="mt-5">
-        {{ page.description }}
-      </div>
-    {% endif %}
-    {{ page.content | safe }}
-  </article>
+
+<div class="mt-1">
+  {% for tag in page.taxonomies.tags %}
+    <span>
+      #<a class="link link-primary dark:link-accent" href="{{ get_url(path='404', trailing_slash=false) }}">{{ tag }}</a>
+    </span>
+  {% endfor %}
 </div>
+
+<article class="markdown">
+  {% if page.extra.show_description %}
+    <div class="mt-5">
+      {{ page.description }}
+    </div>
+  {% endif %}
+
+  {{ page.content | safe }}
+</article>
+
 {% endblock content %}

@@ -1,107 +1,129 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 my-8">
-  <div class="mx-auto max-w-3xl">
-    <div class="flex flex-col md:flex-row gap-4 md:gap-12">
-      <div class="flex flex-col items-center gap-3">
-        <div class="avatar">
-          <div class="w-48 rounded-full">
-            <img alt="A picture of me, showing only from the neck up. I'm wearing a white shirt, and the background is a bluish sky." src="{{ get_url(path='images/avatar.jpeg') | safe }}" />
-          </div>
-        </div>
 
-        <div class="flex flex-col items-center">
-          <h1 class="text-3xl font-bold">
-            Demetrius P.
-          </h1>
-          <span>Moved by curiosity.</span>
-        </div>
-      </div>
+<div class="breadcrumbs mb-4">
+  <ul>
+    <li>
+      <a href="{{ get_url(path='/') }}">
+        <svg class="w-4 h-4 mr-2 stroke-current" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 5.69L17 10.19V18H15V12H9V18H7V10.19L12 5.69M12 3L2 12H5V20H11V14H13V20H19V12H22" />
+        </svg>
+        Home
+      </a>
+    </li>
+    <li>
+      <a class="pointer-events-none" href="{{ page.permalink | safe }}">
+        <svg class="w-4 h-4 mr-2 stroke-current" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M5,3C3.89,3 3,3.89 3,5V19C3,20.11 3.89,21 5,21H19C20.11,21 21,20.11 21,19V5C21,3.89 20.11,3 19,3H5M5,5H19V19H5V5M7,7V9H17V7H7M7,11V13H17V11H7M7,15V17H14V15H7Z" />
+        </svg>
 
-      <div class="self-center">
-        <h1 class="font-bold font-sans break-normal text-3xl sm:text-5xl pb-4">
-          About me
-        </h1>
+        {{ page.title }}
+      </a>
+    </li>
+  </ul>
+</div>
 
-        <article class="prose">
-          <p>
-            Welcome to my blog! My name is Demetrius, I'm from Corumbá - MS, Brazil, and I'm 22 years old.
-          </p>
-          <p>
-            This blog is built using 
-            <a href="https://www.getzola.org/" target="_blank">Zola</a> 
-            as the Static Site Engine, and 
-            <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a> with 
-            <a href="https://daisyui.com/" target="_blank">DaisyUI</a> for styling.
-          </p>
-          <p>
-            My links are available on the footer of this page! There, you can find my email, LinkedIn, GitHub, and more.
-          </p>
-        </article>
+<div class="flex items-center flex-col sm:flex-row gap-8 md:gap-12">
+  <div class="flex flex-col items-center gap-3">
+    <div class="avatar">
+      <div class="w-48 rounded-full">
+        <img alt="A picture of me, showing only from the neck up. I'm wearing a white shirt, and the background is a bluish sky." src="{{ get_url(path='images/avatar.jpeg') | safe }}" />
       </div>
     </div>
 
-    <div class="flex flex-col md:flex-row justify-between gap-6 mt-8">
-      <div>
-        <h2 class="font-bold text-2xl mb-2">
-          Interests
-        </h2>
-        <ul class="list-disc pl-4 flex flex-col gap-3">
-          <li>
-            Natural Language Processing
-          </li>
-          <li>
-            Data Science
-          </li>
-          <li>
-            Sharing Knowledge
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="font-bold text-2xl mb-2">
-          Education
-        </h2>
-        <ul class="flex flex-col gap-2">
-          <li>
-            <div class="flex flex-col">
-              <div class="flex gap-2">
-                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                  <path fill="currentColor" d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3M18.82 9L12 12.72L5.18 9L12 5.28L18.82 9M17 16L12 18.72L7 16V12.27L12 15L17 12.27V16Z" />
-                </svg>
-                <p class="flex flex-wrap gap-1">
-                  Msc. in Computer Science, <span>2022-today</span>
-                </p>
-              </div>
-              <div>
-                FACOM - UFMS
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="flex flex-col">
-              <div class="flex gap-2">
-                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                  <path fill="currentColor" d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3M18.82 9L12 12.72L5.18 9L12 5.28L18.82 9M17 16L12 18.72L7 16V12.27L12 15L17 12.27V16Z" />
-                </svg>
-                <p class="flex flex-wrap gap-1">
-                  Bachelor in Software Engineering, <span>2019-2022</span>
-                </p>
-              </div>
-              <div>
-                FACOM - UFMS
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div id="about-me-markdown-content" class="markdown mt-8">
-      {{ page.content | safe }}
+    <div class="flex flex-col items-center">
+      <h1 class="text-3xl font-bold">
+        Demetrius P.
+      </h1>
+      <span class="text-center">
+        Moved by curiosity.
+      </span>
     </div>
   </div>
+
+  <div class="self-center">
+    <h1 class="font-bold font-sans break-normal text-3xl md:text-5xl pb-4">
+      About me
+    </h1>
+
+    <article class="prose max-w-full">
+      <p>
+        Welcome to my blog! My name is Demetrius, I'm from Corumbá - MS, Brazil, and I'm 22 years old.
+      </p>
+      <p>
+        This blog is built using 
+        <a href="https://www.getzola.org/" target="_blank">Zola</a> 
+        as the Static Site Engine, and 
+        <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a> with 
+        <a href="https://daisyui.com/" target="_blank">DaisyUI</a> for styling.
+      </p>
+      <p>
+        My links are available on the footer of this page! There, you can find my email, LinkedIn, GitHub, and more.
+      </p>
+    </article>
+  </div>
 </div>
+
+<div class="flex flex-col md:flex-row justify-between gap-6 mt-8">
+  <div>
+    <h2 class="font-bold text-2xl mb-2">
+      Interests
+    </h2>
+    <ul class="list-disc pl-4 flex flex-col gap-3">
+      <li>
+        Natural Language Processing
+      </li>
+      <li>
+        Data Science
+      </li>
+      <li>
+        Sharing Knowledge
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h2 class="font-bold text-2xl mb-2">
+      Education
+    </h2>
+    <ul class="flex flex-col gap-2">
+      <li>
+        <div class="flex flex-col">
+          <div class="flex gap-2">
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3M18.82 9L12 12.72L5.18 9L12 5.28L18.82 9M17 16L12 18.72L7 16V12.27L12 15L17 12.27V16Z" />
+            </svg>
+            <p class="flex flex-wrap gap-1">
+              Msc. in Computer Science, <span>2022-today</span>
+            </p>
+          </div>
+          <div>
+            FACOM - UFMS
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="flex flex-col">
+          <div class="flex gap-2">
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3M18.82 9L12 12.72L5.18 9L12 5.28L18.82 9M17 16L12 18.72L7 16V12.27L12 15L17 12.27V16Z" />
+            </svg>
+            <p class="flex flex-wrap gap-1">
+              Bachelor in Software Engineering, <span>2019-2022</span>
+            </p>
+          </div>
+          <div>
+            FACOM - UFMS
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="about-me-markdown-content" class="markdown mt-8">
+  {{ page.content | safe }}
+</div>
+
 {% endblock content %}
