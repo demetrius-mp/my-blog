@@ -23,24 +23,26 @@
   </ul>
 </div>
 
-<div class="mb-8">
+<div class="mb-4">
   <h1 class="lg:text-5xl text-4xl font-extrabold">Posts grouped by year</h1>
 </div>
 
-{% for year, posts in section.pages | group_by(attribute="year") %}
-  <h2 class="text-3xl font-bold">
-    {{ year }}
-  </h2>
+<div class="flex flex-col gap-6">
+  {% for year, posts in section.pages | group_by(attribute="year") %}
+    <div>
+      <div class="divider text-3xl font-bold mb-4">
+        {{ year }}
+      </div>
 
-  <div class="divider my-2"></div> 
-
-  <ul class="grid grid-cols-1 gap-6">
-    {% for post in posts %}
-      <li>
-        {{ components::post_summary(page=post) }}
-      </li>
-    {% endfor %}
-  </ul>
-{% endfor %}
+      <ul class="grid grid-cols-1 gap-6">
+        {% for post in posts %}
+          <li>
+            {{ components::post_summary(page=post) }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</div>
 
 {% endblock content %}
