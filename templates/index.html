@@ -21,9 +21,15 @@
 </div>
 
 <div class="mb-8">
-  <h1 class="lg:text-5xl text-4xl font-extrabold">Recent posts</h1>
+  <h1 class="lg:text-5xl text-4xl font-extrabold mb-2">Recent posts</h1>
   <a class="link" href="{{ get_url(path='posts', trailing_slash=false) }}">
-    See all posts
+    Posts per year
+  </a>
+  <span class="mx-2">
+    /
+  </span>
+  <a class="link" href="{{ get_url(path='tags', trailing_slash=false) }}">
+    Posts per tag
   </a>
 </div>
 

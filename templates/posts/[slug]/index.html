@@ -44,7 +44,7 @@
 <div class="mt-1">
   {% for tag in page.taxonomies.tags %}
     <span>
-      #<a class="link link-primary dark:link-accent" href="{{ get_url(path='404', trailing_slash=false) }}">{{ tag }}</a>
+      #<a class="link link-primary dark:link-accent" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">{{ tag }}</a>
     </span>
   {% endfor %}
 </div>

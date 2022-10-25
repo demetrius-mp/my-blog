@@ -174,7 +174,7 @@
   <div class="flex gap-2 flex-wrap">
     {% for tag in page.taxonomies.tags %}
       <span class="flex">
-        #<a class="link link-primary dark:link-accent" href="{{ get_url(path='404', trailing_slash=false) }}">
+        #<a class="link link-primary dark:link-accent" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">
           {{ tag }}
         </a>
       </span>
