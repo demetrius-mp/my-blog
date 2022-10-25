@@ -1,6 +1,6 @@
 +++
 title = "Markdown showcase"
-description = "Showcasing how the markdown content is rendered"
+description = "This post offers a sample of basic Markdown syntax that can be used in Zola content files. Styled with @tailwindcss/typography, and material-dark theme."
 date = 2022-10-23
 updated = 2022-10-23
 slug = "markdown-showcase"
@@ -8,6 +8,10 @@ slug = "markdown-showcase"
 [taxonomies]
 tags = ["markdown", "meta"]
 +++
+
+This post offers a sample of basic Markdown syntax that can be used in
+Zola content files. Styled with [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)
+and material-dark theme.
 
 ## Heading 2
 
