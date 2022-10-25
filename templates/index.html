@@ -13,7 +13,9 @@
 </div>
 <ul class="grid grid-cols-1 gap-6">
   {% for page in subsection.pages %}
-  {{ components::post_summary(page=page) }}
+    <li>
+      {{ components::post_summary(page=page) }}
+    </li>
   {% endfor %}
 </ul>
 {% endblock content %}

@@ -12,7 +12,7 @@
 </div>
 {% for tag in page.taxonomies.tags %}
   <span>
-    #<a class="link link-primary dark:link-accent" href="">{{ tag }}</a>
+    #<a class="link link-primary dark:link-accent" href="{{ get_url(path='404', trailing_slash=false) }}">{{ tag }}</a>
   </span>
 {% endfor %}
 <div class="flex justify-center">
