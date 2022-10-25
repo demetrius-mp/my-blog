@@ -19,3 +19,32 @@
 .requires-js {
   @apply hidden;
 }
+
+pre[data-lang] table {
+  @apply my-0 text-[1em];
+  border-collapse: collapse;
+}
+
+pre[data-lang] tr {
+  @apply border-b-0;
+}
+
+pre[data-lang] td {
+  @apply p-0;
+}
+
+pre[data-lang] mark {
+  display: block !important;
+  background-color: inherit !important;
+}
+
+tr:has(> td > mark) {
+  /* in vscode themes, this prop is called editor.selectionBackground */
+  background-color: #44475A;
+}
+
+pre[data-lang] table td:nth-of-type(1) {
+  @apply pr-4;
+  text-align: right;
+  user-select: none;
+}
