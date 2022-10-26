@@ -189,26 +189,56 @@
 {% macro table_of_contents(page) %}
 
 {% if page.toc %}
-  <nav class="bg-base-200 sticky top-4 overflow-auto max-h-screen pt-0 px-4 pb-4">
-    <h3 class="text-xl font-extrabold my-2">On this page</h3>
-    <ul>
-      {% for h2 in page.toc %}
-        <li class="pb-4 text-base">
-          {{ h2.title }}
+  <div class="hidden md:block max-w-[15rem] min-w-[14rem] ml-2 flex-1">
+    <div class="table-of-contents">
+      <nav>
+        <h3 class="text-xl font-extrabold my-4">On this page</h3>
+        <ul>
+          {% for h2 in page.toc %}
+            <li class="pb-4 text-[1.08rem]">
+              <a class="hover:link hover:link-primary dark:hover:link-accent" href="{{ h2.permalink | safe }}">
+                {{ h2.title }}
+              </a>
+  
+              {% if h2.children %}
+                <ul class="pl-2 pt-1">
+                  {% for h3 in h2.children %}
+                    <li class="pb-1">
+                      <a class="hover:link hover:link-primary dark:hover:link-accent" href="{{ h3.permalink | safe }}">
+                        <small class="text-[.875rem]">
+                          - {{ h3.title }}
+                        </small>
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+    <!-- <nav class="bg-base-200 sticky top-4 overflow-auto max-h-screen pt-0 px-4 pb-4">
+      <h3 class="text-xl font-extrabold my-2">On this page</h3>
+      <ul>
+        {% for h2 in page.toc %}
+          <li class="pb-4 text-base">
+            {{ h2.title }}
 
-          {% if h2.children %}
-            <ul class="pl-2 pt-1 text-sm">
-              {% for h3 in h2.children %}
-                <li>
-                  - {{ h3.title }}
-                </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  </nav>
+            {% if h2.children %}
+              <ul class="pl-2 pt-1 text-sm">
+                {% for h3 in h2.children %}
+                  <li>
+                    - {{ h3.title }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav> -->
+  </div>
 {% endif %}
 
 {% endmacro %}

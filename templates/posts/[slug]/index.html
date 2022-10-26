@@ -1,3 +1,4 @@
+{% import "macros/components.html" as components %}
 {% extends "base.html" %}
 
 {% block content %}
@@ -31,34 +32,38 @@
   </ul>
 </div>
 
-<article>
-  <h1 class="text-5xl font-extrabold mb-8">
-    {{ page.title }}
-  </h1>
-  <div class="flex flex-wrap items-center gap-2">
-    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
-    </svg>
-    Posted on {{ page.date | date(format="%B %d, %Y") }}
-  </div>
+<div class="flex">
+  <article class="flex-1 min-w-0">
+    <h1 class="text-5xl font-extrabold mb-8">
+      {{ page.title }}
+    </h1>
+    <div class="flex flex-wrap items-center gap-2">
+      <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+      </svg>
+      Posted on {{ page.date | date(format="%B %d, %Y") }}
+    </div>
 
-  <div class="mt-1">
-    {% for tag in page.taxonomies.tags %}
-      <span>
-        #<a class="link link-primary dark:link-accent" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">{{ tag }}</a>
-      </span>
-    {% endfor %}
-  </div>
+    <div class="mt-1">
+      {% for tag in page.taxonomies.tags %}
+        <span>
+          #<a class="link link-primary dark:link-accent" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">{{ tag }}</a>
+        </span>
+      {% endfor %}
+    </div>
 
-  <div class="markdown">
-    {% if page.extra.show_description %}
-      <div class="mt-5">
-        {{ page.description }}
-      </div>
-    {% endif %}
+    <div class="markdown">
+      {% if page.extra.show_description %}
+        <div class="mt-5">
+          {{ page.description }}
+        </div>
+      {% endif %}
 
-    {{ page.content | safe }}
-  </div>
-</article>
+      {{ page.content | safe }}
+    </div>
+  </article>
+
+  {{ components::table_of_contents(page=page) }}
+</div>
 
 {% endblock content %}

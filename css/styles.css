@@ -20,6 +20,8 @@
   @apply hidden;
 }
 
+/* CODE BLOCK RENDERING */
+
 pre[data-lang] table {
   @apply my-0 text-[1em];
   border-collapse: collapse;
@@ -47,4 +49,10 @@ pre[data-lang] table td:nth-of-type(1) {
   @apply pr-4;
   text-align: right;
   user-select: none;
+}
+
+/* CODE BLOCK RENDERING */
+
+.table-of-contents {
+  @apply overflow-auto max-h-screen pt-0 px-4 pb-4 top-4 sticky rounded-md border-t-primary border-t-[5px] dark:border-t-accent bg-base-200;
 }
