@@ -17,7 +17,6 @@
         <svg class="w-4 h-4 mr-2 stroke-current" viewBox="0 0 24 24">
           <path fill="currentColor" d="M5,3C3.89,3 3,3.89 3,5V19C3,20.11 3.89,21 5,21H19C20.11,21 21,20.11 21,19V5C21,3.89 20.11,3 19,3H5M5,5H19V19H5V5M7,7V9H17V7H7M7,11V13H17V11H7M7,15V17H14V15H7Z" />
         </svg>
-
         {{ page.title }}
       </a>
     </li>
@@ -28,16 +27,17 @@
   <div class="flex flex-col items-center gap-3">
     <div class="avatar">
       <div class="w-48 rounded-full">
-        <img alt="A picture of me, showing only from the neck up. I'm wearing a white shirt, and the background is a bluish sky." src="{{ get_url(path='images/avatar.jpeg') | safe }}" />
+        {% set image = resize_image(path=config.extra.profile_picture, op="fit_width", width=215, format="webp") %}
+        <img alt="A picture of me, showing only from the neck up. I'm wearing a white shirt, and the background is a bluish sky." src="{{ image.url }}" />
       </div>
     </div>
 
     <div class="flex flex-col items-center">
-      <h1 class="text-3xl font-bold">
-        Demetrius P.
+      <h1 class="text-3xl font-bold text-center">
+        {{ config.extra.author_name }}
       </h1>
       <span class="text-center">
-        Moved by curiosity.
+        {{ config.extra.identity_phrase }}
       </span>
     </div>
   </div>
@@ -49,7 +49,7 @@
 
     <article class="prose max-w-full">
       <p>
-        Welcome to my blog! My name is Demetrius, I'm from Corumbá - MS, Brazil, and I'm 22 years old.
+        Welcome to my blog! My name is {{ config.extra.author_name }}, I'm from Corumbá - MS, Brazil, and I'm 22 years old.
       </p>
       <p>
         This blog is built using 
@@ -71,15 +71,11 @@
       Interests
     </h2>
     <ul class="list-disc pl-4 flex flex-col gap-3">
-      <li>
-        Natural Language Processing
-      </li>
-      <li>
-        Data Science
-      </li>
-      <li>
-        Sharing Knowledge
-      </li>
+      {% for interest in config.extra.interests %}
+        <li>
+          {{ interest }}
+        </li>
+      {% endfor %}
     </ul>
   </div>
 
@@ -88,41 +84,28 @@
       Education
     </h2>
     <ul class="flex flex-col gap-2">
-      <li>
-        <div class="flex flex-col">
-          <div class="flex gap-2">
-            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-              <path fill="currentColor" d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3M18.82 9L12 12.72L5.18 9L12 5.28L18.82 9M17 16L12 18.72L7 16V12.27L12 15L17 12.27V16Z" />
-            </svg>
-            <p class="flex flex-wrap gap-1">
-              Msc. in Computer Science, <span>2022-today</span>
-            </p>
+      {% for course in config.extra.education.courses %}
+        <li>
+          <div class="flex flex-col">
+            <div class="flex gap-2">
+              <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3M18.82 9L12 12.72L5.18 9L12 5.28L18.82 9M17 16L12 18.72L7 16V12.27L12 15L17 12.27V16Z" />
+              </svg>
+              <p class="flex flex-wrap gap-1">
+                {{ course.name }}, <span>{{ course.dates }}</span>
+              </p>
+            </div>
+            <div>
+              {{ course.institution }}
+            </div>
           </div>
-          <div>
-            FACOM - UFMS
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="flex flex-col">
-          <div class="flex gap-2">
-            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-              <path fill="currentColor" d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3M18.82 9L12 12.72L5.18 9L12 5.28L18.82 9M17 16L12 18.72L7 16V12.27L12 15L17 12.27V16Z" />
-            </svg>
-            <p class="flex flex-wrap gap-1">
-              Bachelor in Software Engineering, <span>2019-2022</span>
-            </p>
-          </div>
-          <div>
-            FACOM - UFMS
-          </div>
-        </div>
-      </li>
+        </li>
+      {% endfor %}
     </ul>
   </div>
 </div>
 
-<div id="about-me-markdown-content" class="markdown mt-8">
+<div class="markdown mt-8">
   {{ page.content | safe }}
 </div>
 
