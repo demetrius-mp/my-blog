@@ -20,9 +20,9 @@
 <body class="min-h-screen flex flex-col">
   {{ components::navbar(config=config) }}
 
-  <div class="container max-w-6xl mt-2 mb-8 mx-auto px-4">
+  <main class="container max-w-6xl mt-2 mb-8 mx-auto px-4">
     {% block content %} {% endblock %}
-  </div>
+  </main>
 
   {{ components::footer(config=config.extra.social) }}
 </body>
