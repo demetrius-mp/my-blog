@@ -8,6 +8,14 @@
   }
 }
 
+.markdown .alert {
+  @apply mb-4;
+}
+
+.youtube > iframe {
+  @apply min-h-[400px] w-full;
+}
+
 .zola-anchor {
   @apply pr-2 opacity-60 no-underline;
 }

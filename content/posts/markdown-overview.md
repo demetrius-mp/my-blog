@@ -270,3 +270,38 @@ if there is a heading too close to the end of the document.
 
 What I've written here is probably long enough, but adding this final
 sentence can't hurt.
+
+## Using shortcodes
+
+Shortcodes are a way provided by zola to render `tera`
+templates in markdown.
+
+### Custom shortcodes
+
+#### Alerts
+
+{% alert(type="info") %}
+Works with simple text, and `markdown` **rendered** _content_.
+{% end %}
+
+{% alert(type="success") %}
+Works with simple text, and `markdown` **rendered** _content_.
+{% end %}
+
+{% alert(type="warning") %}
+Works with simple text, and `markdown` **rendered** _content_.
+{% end %}
+
+{% alert(type="error") %}
+Works with simple text, and `markdown` **rendered** _content_.
+{% end %}
+
+### Built-in shortcodes
+
+#### Youtube
+
+{{ youtube(id="5C_HPTJg5ek", class="youtube") }}
+
+#### Gist
+<!-- markdownlint-disable-line -->
+{{ gist(url="https://gist.github.com/Keats/e5fb6aad409f28721c0ba14161644c57", class="not-prose") }}
