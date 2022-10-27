@@ -3,7 +3,7 @@ title = "Markdown showcase"
 description = "This post offers a sample of basic Markdown syntax that can be used in Zola content files. Styled with @tailwindcss/typography, and material-dark theme."
 date = 2022-10-23
 updated = 2022-10-23
-slug = "markdown-showcase"
+slug = "markdown-overview"
 
 [taxonomies]
 tags = ["markdown", "meta"]
