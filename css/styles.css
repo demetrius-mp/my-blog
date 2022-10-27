@@ -61,6 +61,14 @@ pre[data-lang] table td:nth-of-type(1) {
 
 /* CODE BLOCK RENDERING */
 
+.markdown code:not([data-lang]) {
+  @apply bg-base-200 rounded-sm;
+}
+
+.markdown .alert code {
+  @apply bg-inherit;
+}
+
 .table-of-contents {
   @apply overflow-auto max-h-screen pt-0 px-4 pb-4 top-4 sticky rounded-md border-t-primary border-t-[5px] dark:border-t-accent bg-base-200;
 }
