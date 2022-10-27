@@ -23,7 +23,7 @@
   </ul>
 </div>
 
-<div class="flex items-center flex-col sm:flex-row gap-8 md:gap-12">
+<div class="flex flex-col sm:flex-row gap-8 md:gap-12">
   <div class="flex flex-col items-center gap-3">
     <div class="avatar">
       <div class="w-48 rounded-full">
@@ -42,26 +42,18 @@
     </div>
   </div>
 
-  <div class="self-center">
-    <h1 class="font-bold font-sans break-normal text-3xl md:text-5xl pb-4">
-      About me
-    </h1>
+  <div>
+    {% set bio = get_page(path="pages/about-me/bio.md") %}
+    <!-- <h1 class="self-start font-bold font-sans break-normal text-3xl md:text-5xl pb-4">
+      {{ bio.title }}
+    </h1> -->
 
-    <article class="prose max-w-full">
-      <p>
-        Welcome to my blog! My name is {{ config.extra.author_name }}, I'm from Corumbá - MS, Brazil, and I'm 22 years old.
-      </p>
-      <p>
-        This blog is built using 
-        <a href="https://www.getzola.org/" target="_blank">Zola</a> 
-        as the Static Site Engine, and 
-        <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a> with 
-        <a href="https://daisyui.com/" target="_blank">DaisyUI</a> for styling.
-      </p>
-      <p>
-        My links are available on the footer of this page! There, you can find my email, LinkedIn, GitHub, and more.
-      </p>
-    </article>
+    <div class="markdown">
+      <h1 class="mb-0">
+        {{ bio.title }}
+      </h1>
+      {{ bio.content | safe }}
+    </div>
   </div>
 </div>
 

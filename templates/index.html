@@ -4,9 +4,6 @@
 
 {% block content %}
 
-{% set posts_subsection = section.subsections | first %}
-{% set subsection = get_section(path=posts_subsection) %}
-
 <div class="breadcrumbs mb-4">
   <ul>
     <li>
@@ -32,6 +29,9 @@
     Posts per tag
   </a>
 </div>
+
+{% set posts_subsection = section.subsections | first %}
+{% set subsection = get_section(path=posts_subsection) %}
 
 <ul class="grid grid-cols-1 gap-6">
   {% for page in subsection.pages | slice(end=3) %}
