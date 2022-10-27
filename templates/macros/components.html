@@ -156,11 +156,7 @@
 </h2>
 
 <p class="text-lg">
-  {% if page.extra.summary_source | default(value=false) == 'content' %}
-    {{ page.content | striptags | truncate(lenght=150) | safe }}
-  {% else %}
-    {{ page.description }}
-  {% endif %}
+  {{ page.description }}
 </p>
 
 <div class="flex flex-wrap items-center gap-2 mt-2">
