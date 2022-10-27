@@ -13,11 +13,7 @@ This post offers a sample of basic Markdown syntax that can be used in
 Zola content files. Styled with [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)
 and material-dark theme.
 
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
+## Explaining @tailwindcss/typography
 
 By default, Tailwind removes all of the default browser styling from paragraphs,
 headings, lists and more. This ends up being really useful for building
@@ -144,28 +140,6 @@ I already mentioned above. Now let's see what a more complex list would look lik
 
 After this sort of list I usually have a closing statement or paragraph, because
 it kinda looks weird jumping right to a heading.
-
-## Code should look okay by default
-
-I think most people are going to use [highlight.js](https://highlightjs.org/)
-or [Prism](https://prismjs.com/) or something if they want to style their
-code blocks but it wouldn't hurt to make them look _okay_ out of the box,
-even with no syntax highlighting.
-
-Here's what a default `tailwind.config.js` file looks like at the time of writing:
-
-```js
-module.exports = {
-  purge: [],
-  theme: {
-    extend: {},
-  },
-  variants: {},
-  plugins: [],
-}
-```
-
-Hopefully that looks good enough to you.
 
 ### What about nested lists?
 
