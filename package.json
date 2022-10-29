@@ -7,7 +7,7 @@
     "build:css": "NODE_ENV=production postcss css/styles.css -o static/css/styles.css",
     "prebuild:ts": "tsc --build",
     "build:ts": "terser static/js/index.min.js -o static/js/index.min.js",
-    "minify:html": "html-minifier-terser --collapse-whitespace --remove-comments --file-ext html --input-dir public --output-dir public",
+    "minify:html": "html-minifier-terser --collapse-whitespace --minify-css --remove-comments --file-ext html --input-dir public --output-dir public",
     "build:zola": "zola build",
     "postbuild:zola": "npm run minify:html",
     "build": "npm run build:css && npm run build:ts && npm run build:zola"
