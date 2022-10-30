@@ -71,13 +71,16 @@ pre[data-lang] table td:nth-of-type(1) mark {
 tr:has(> td > mark) {
   /* in vscode themes, this prop is called editor.selectionBackground */
   background-color: #20343e;
-  /* background-color: rgba(200,200,255,.1); */
 }
 
 pre[data-lang] table td:nth-of-type(1) {
   @apply pr-4;
   text-align: right;
   user-select: none;
+}
+
+div.code-with-filename > pre {
+  @apply mt-0 rounded-t-none;
 }
 
 /* CODE BLOCK RENDERING */
