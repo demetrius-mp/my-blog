@@ -14,6 +14,7 @@
     {% set favicon = resize_image(path='static/images/avatar.jpeg', format="png", width=32, height=32) %}
     <link rel="shortcut icon" href="{{ favicon.url }}" type="image/png">
     <link rel="icon" href="{{ favicon.url }}" type="image/png">
+    <script src="{{ get_url(path='js/theme.min.js') }}"></script>
     <noscript>
       <style>
         .requires-js {
@@ -25,7 +26,6 @@
 </head>
 
 <body class="min-h-screen flex flex-col">
-  <script src="{{ get_url(path='js/theme.min.js') }}"></script>
   {{ components::navbar(config=config) }}
 
   <main class="container max-w-6xl mt-2 mb-8 mx-auto px-4">
@@ -33,10 +33,9 @@
   </main>
 
   {{ components::footer(config=config.extra.social) }}
-  <script>
-    theme.attachEventListener()
-  </script>
-  {% block script %} {% endblock script %}
+  {% block script %}
+    <script>theme.attachEventListener()</script>
+  {% endblock script %}
 </body>
 
 </html>
