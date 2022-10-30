@@ -52,7 +52,7 @@ HTML content and turn it into a beautiful, well-formatted document:
 For more information about how to use the plugin and the features it includes,
 [read the documentation](https://github.com/tailwindcss/typography/blob/master/README.md).
 
-{% code_with_filename(filename="templates/index.html") %}
+{% codeblock(filename="templates/index.html") %}
 
 ```html,linenos,hl_lines=1 2,linenostart=8
 <article class="prose">
