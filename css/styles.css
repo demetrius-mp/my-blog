@@ -24,7 +24,7 @@
   @apply opacity-50;
 }
 
-/* CODE BLOCK RENDERING */
+/* START: CODE BLOCK RENDERING */
 
 pre[data-linenos] {
   @apply pl-0;
@@ -79,11 +79,13 @@ pre[data-lang] table td:nth-of-type(1) {
   user-select: none;
 }
 
-div.code-with-filename > pre {
+/* END: CODE BLOCK RENDERING */
+
+/* START: OVERRIDING MARKDOWN STYLES FOR SHORTCODES */
+
+.markdown div.code-with-filename > pre {
   @apply mt-0 rounded-t-none;
 }
-
-/* CODE BLOCK RENDERING */
 
 .markdown code:not([data-lang]) {
   @apply bg-base-200 rounded-sm;
@@ -93,6 +95,4 @@ div.code-with-filename > pre {
   @apply bg-inherit;
 }
 
-.table-of-contents {
-  @apply overflow-auto max-h-screen pt-0 px-4 pb-4 top-4 sticky rounded-md border-t-primary border-t-[5px] dark:border-t-accent bg-base-200;
-}
+/* END: OVERRIDING MARKDOWN STYLES FOR SHORTCODES */
