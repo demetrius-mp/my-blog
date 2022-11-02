@@ -52,19 +52,6 @@ HTML content and turn it into a beautiful, well-formatted document:
 For more information about how to use the plugin and the features it includes,
 [read the documentation](https://github.com/tailwindcss/typography/blob/master/README.md).
 
-{% codeblock(filename="templates/index.html") %}
-
-```html,linenos,hl_lines=1 2,linenostart=8
-<article class="prose">
-  <h1>Garlic bread with cheese: What the science tells us</h1>
-  <p>For years parents have espoused the health benefits of eating garlic bread with cheese to their children, with the food earning such an iconic status in our culture that kids will often dress up as warm, cheesy loaf for Halloween.</p>
-  <p>But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases springing up around the country.</p>
-  <!-- ... -->
-</article>
-```
-
-{% end %}
-
 ---
 
 ## What to expect from here on out
@@ -274,6 +261,21 @@ Works with simple text, and `markdown` **rendered** _content_.
 Works with simple text, and `markdown` **rendered** _content_.
 {% end %}
 
+#### Enchanced codeblocks
+
+{% codeblock(filename="templates/index.html") %}
+
+```html,linenos,hl_lines=1 2,linenostart=8
+<article class="prose">
+  <h1>Garlic bread with cheese: What the science tells us</h1>
+  <p>For years parents have espoused the health benefits of eating garlic bread with cheese to their children, with the food earning such an iconic status in our culture that kids will often dress up as warm, cheesy loaf for Halloween.</p>
+  <p>But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases springing up around the country.</p>
+  <!-- ... -->
+</article>
+```
+
+{% end %}
+
 ### Built-in shortcodes
 
 #### Youtube
@@ -281,5 +283,5 @@ Works with simple text, and `markdown` **rendered** _content_.
 {{ youtube(id="5C_HPTJg5ek", class="youtube") }}
 
 #### Gist
-<!-- markdownlint-disable-line -->
+
 {{ gist(url="https://gist.github.com/Keats/e5fb6aad409f28721c0ba14161644c57", class="not-prose") }}
