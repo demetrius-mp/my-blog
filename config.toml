@@ -18,8 +18,8 @@ highlight_theme = "material-dark"
 author_name = "Demetrius Panovitch"
 keywords = "Portfolio, Blog, Computer Science"
 profile_picture = "images/avatar.jpeg"
-interests = ["Natural Language Processing", "Data Science", "Sharing Knowledge"]
 identity_phrase = "Moved by curiosity."
+interests = ["Data Science", "Backend", "Developer Experience", "Open Source"]
 
 [[extra.education.courses]]
 name = "Msc. in Computer Science"

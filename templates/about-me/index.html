@@ -42,22 +42,16 @@
     </div>
   </div>
 
-  <div>
+  <div class="markdown prose-p:last:mb-0 self-center">
     {% set bio = get_page(path="pages/about-me/bio.md") %}
-    <!-- <h1 class="self-start font-bold font-sans break-normal text-3xl md:text-5xl pb-4">
+    <h1 class="mb-0">
       {{ bio.title }}
-    </h1> -->
-
-    <div class="markdown">
-      <h1 class="mb-0">
-        {{ bio.title }}
-      </h1>
-      {{ bio.content | safe }}
-    </div>
+    </h1>
+    {{ bio.content | safe }}
   </div>
 </div>
 
-<div class="flex flex-col md:flex-row justify-between gap-6 mt-8">
+<div class="flex flex-col sm:flex-row justify-between gap-6 mt-8">
   <div>
     <h2 class="font-bold text-2xl mb-2">
       Interests
@@ -77,20 +71,19 @@
     </h2>
     <ul class="flex flex-col gap-2">
       {% for course in config.extra.education.courses %}
-        <li>
-          <div class="flex flex-col">
-            <div class="flex gap-2">
-              <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3M18.82 9L12 12.72L5.18 9L12 5.28L18.82 9M17 16L12 18.72L7 16V12.27L12 15L17 12.27V16Z" />
-              </svg>
-              <p class="flex flex-wrap gap-1">
-                {{ course.name }}, <span>{{ course.dates }}</span>
-              </p>
-            </div>
-            <div>
-              {{ course.institution }}
-            </div>
-          </div>
+        <li class="flex flex-col flex-wrap gap-2 align-middle">
+          <p>
+            <svg class="inline-block w-6 align-top"  viewBox="0 0 24 24">
+              <path fill="currentColor" d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3M18.82 9L12 12.72L5.18 9L12 5.28L18.82 9M17 16L12 18.72L7 16V12.27L12 15L17 12.27V16Z" />
+            </svg>
+            {{ course.name }}
+            <span class="inline-block">
+              ({{ course.dates }})
+            </span>
+          </p>
+          <p>
+            {{ course.institution }}
+          </p>
         </li>
       {% endfor %}
     </ul>
