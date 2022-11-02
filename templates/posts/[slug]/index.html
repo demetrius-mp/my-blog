@@ -60,18 +60,40 @@
       {% endfor %}
     </div>
 
-    <div class="markdown">
-      {% if page.extra.show_description %}
+    {% if page.extra.show_description %}
+      <div class="markdown">
         <div class="mt-5">
           {{ page.description }}
         </div>
-      {% endif %}
+      </div>
+    {% endif %}
 
+    <div class="grid md:hidden mt-5 collapse collapse-arrow bg-base-200 rounded-box">
+      <input type="checkbox" /> 
+      <div class="collapse-title text-xl font-medium">
+        Table of contents
+      </div>
+      <div class="collapse-content"> 
+        {{ components::table_of_contents(page=page) }}
+      </div>
+    </div>
+
+    <div class="markdown">
       {{ page.content | safe }}
     </div>
   </article>
 
-  {{ components::table_of_contents(page=page) }}
+  {% if page.toc %}
+    <div class="hidden md:block max-w-[15rem] min-w-[14rem] ml-2 flex-1">
+      <div class="overflow-auto max-h-[95vh] pt-0 px-4 top-4 sticky rounded-md border-t-primary border-t-[5px] dark:border-t-accent bg-base-200">
+        <h3 class="text-xl font-extrabold my-4">
+          <!-- On this page -->
+          Table of contents
+        </h3>
+        {{ components::table_of_contents(page=page) }}
+      </div>
+    </div>
+  {% endif %}
 </div>
 
 {% endblock content %}

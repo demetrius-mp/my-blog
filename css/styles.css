@@ -96,3 +96,25 @@ pre[data-lang] table td:nth-of-type(1) {
 }
 
 /* END: OVERRIDING MARKDOWN STYLES FOR SHORTCODES */
+
+/* START: ADDING MARGIN TOP ON HASH HEADING LINKS */
+
+h2::before { 
+  display: block; 
+  content: " "; 
+  margin-top: -1em; 
+  height: 1em; 
+  visibility: hidden; 
+  pointer-events: none;
+}
+
+h3::before { 
+  display: block; 
+  content: " "; 
+  margin-top: -1em; 
+  height: 1em; 
+  visibility: hidden; 
+  pointer-events: none;
+}
+
+/* END: ADDING MARGIN TOP ON HASH HEADING LINKS */
