@@ -20,6 +20,10 @@
         .requires-js {
           display: none !important;
         }
+
+        .no-js-flex {
+          display: flex !important;
+        }
       </style>
     </noscript>
   {% endblock head %}
@@ -29,6 +33,17 @@
   {{ components::navbar(config=config) }}
 
   <main class="container max-w-6xl mt-2 mb-8 mx-auto px-4">
+    <div class="hidden alert alert-info shadow-lg my-4 no-js-flex">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current flex-shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <span>
+          To use features, such as
+          <strong>dark mode</strong>,
+          you must enable JavaScript.
+        </span>
+      </div>
+    </div>
+
     {% block content %} {% endblock %}
   </main>
 
