@@ -137,12 +137,14 @@
   <meta property="og:url" content="{{ current_url | safe }}" />
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description }}">
+  <meta property="og:image" content="{{ get_url(path='images/openGraphImage.png') | safe }}">
 
   <!-- twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="{{ current_url | safe }}" />
   <meta property="twitter:title" content="{{ title }}">
   <meta property="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ get_url(path='images/openGraphImage.png') | safe }}">
 {% endif %}
 
 {% endmacro seo %}
