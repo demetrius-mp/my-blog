@@ -4,7 +4,7 @@
 
 @layer components {
   .markdown {
-    @apply prose lg:prose-lg lg:max-w-4xl prose-pre:text-[1em] lg:prose-pre:text-[1em] min-w-0 max-w-none;
+    @apply prose lg:prose-lg prose-pre:text-[1em] lg:prose-pre:text-[1em] min-w-0 max-w-none;
   }
 }
 

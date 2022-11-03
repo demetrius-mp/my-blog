@@ -1,5 +1,5 @@
 +++
-title = "About me"
+title = "Introduction"
 +++
 
 Welcome to my blog! My name is Demetrius Panovitch,
