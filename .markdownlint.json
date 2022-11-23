@@ -2,9 +2,5 @@
   "MD046": {
     "style": "fenced"
   },
-  "MD013": {
-    "tables": false,
-    "code_blocks": false,
-    "line_length": 100
-  }
+  "MD013": false
 }

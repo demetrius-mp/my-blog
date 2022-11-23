@@ -236,6 +236,22 @@ if there is a heading too close to the end of the document.
 What I've written here is probably long enough, but adding this final
 sentence can't hurt.
 
+### Math expressions
+
+Here's an inline math expression: $V_t = \beta V_{t-1} + (1 - \beta) \theta_t$.
+
+And a displayed math expression:
+
+$$V_t = \beta V_{t-1} + (1 - \beta) \theta_t$$
+
+Repeated fractions can look weird...
+
+$$\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} \equiv 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\cdots} } } }$$
+
+Sum notation $(\sum_{k=1}^n a)$ looks better on displayed expressions:
+
+$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+
 ## Using shortcodes
 
 Shortcodes are a way provided by zola to render `tera`
