@@ -1,6 +1,13 @@
 {% import "macros/components.html" as components %}
 {% extends "base.html" %}
 
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css" integrity="sha384-Juol1FqnotbkyZUT5Z7gUPjQ9gzlwCENvUZTpQBAPxtusdwFLRy382PSDx5UUJ4/" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.js" integrity="sha384-97gW6UIJxnlKemYavrqDHSX3SiygeOwIZhwyOKRfSaf0JWKRVj9hLASHgFTzT+0O" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+{% endblock head %}
+
 {% block content %}
 
 <div class="breadcrumbs mb-4">
@@ -90,7 +97,6 @@
     <div class="hidden md:block max-w-[15rem] min-w-[14rem] ml-2 flex-1">
       <div class="overflow-auto max-h-[95vh] pt-0 px-4 top-4 sticky rounded-md border-t-primary border-t-[5px] dark:border-t-accent bg-base-200">
         <h3 class="text-xl font-extrabold my-4">
-          <!-- On this page -->
           Table of contents
         </h3>
         {{ components::table_of_contents(page=page) }}
@@ -100,3 +106,17 @@
 </div>
 
 {% endblock content %}
+
+{% block script %}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+      ],
+      throwOnError : false
+    });
+  });
+</script>
+{% endblock script %}
