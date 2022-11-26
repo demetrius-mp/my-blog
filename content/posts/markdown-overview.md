@@ -7,6 +7,9 @@ slug = "markdown-overview"
 
 [taxonomies]
 tags = ["markdown", "meta"]
+
+[extra]
+katex = true
 +++
 
 This post offers a sample of basic Markdown syntax that can be used in
