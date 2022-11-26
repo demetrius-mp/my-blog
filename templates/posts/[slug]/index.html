@@ -112,6 +112,7 @@
 {% endblock content %}
 
 {% block script %}
+{{ super() }}
 {% if page.extra.katex %}
   <script>
     document.addEventListener("DOMContentLoaded", function() {
