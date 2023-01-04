@@ -50,7 +50,10 @@
 
   {{ components::footer(config=config.extra.social) }}
   {% block script %}
-    <script>theme.attachEventListener()</script>
+    <script>
+      theme.attachEventListener()
+      document.getElementById('currentYear').innerText = new Date().getFullYear()
+    </script>
   {% endblock script %}
 </body>
 

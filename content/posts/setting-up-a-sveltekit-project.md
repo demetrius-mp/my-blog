@@ -1,4 +1,5 @@
 +++
+draft = true
 title = "Setting up a SvelteKit project"
 description = "Showing how to setup a new SvelteKit project using my favorite libraries for authentication, data validation, and more."
 date = 2022-12-24

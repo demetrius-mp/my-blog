@@ -91,6 +91,14 @@
 </div>
 
 <div class="markdown mt-8">
+  {% set projects = get_page(path="pages/about-me/projects.md") %}
+  <h2>
+    {{ projects.title }}
+  </h2>
+  {{ projects.content | safe }}
+</div>
+
+<div class="markdown mt-8">
   {{ page.content | safe }}
 </div>
 
