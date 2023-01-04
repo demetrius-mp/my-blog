@@ -280,7 +280,7 @@ Works with simple text, and `markdown` **rendered** _content_.
 Works with simple text, and `markdown` **rendered** _content_.
 {% end %}
 
-#### Enchanced codeblocks
+#### Enhanced codeblocks
 
 {% codeblock(filename="templates/index.html") %}
 
